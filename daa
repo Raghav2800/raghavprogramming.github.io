@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class stud
+{
+protected:
+    int rno,age;
+public:
+    void input()
+    {
+        cout<<"Enter the rollno and age of the student ";
+        cin>>rno>>age;
+    }
+};
+class marks:public stud
+{
+protected:
+    int m1,m2;
+public:
+    void input1()
+    {
+        cout<<"\nEnter the marks of the student ";
+        cin>>m1>>m2;
+    }
+};
+class sports
+{
+protected:
+    int spm;
+public:
+    void input2()
+    {
+
+        cout<<"\nEnter the marks of sports ";
+        cin>>spm;
+    }
+};
+class result:public marks,public sports
+{
+public:
+    void results()
+    {
+        int total;
+        total = spm+m1+m2;
+        cout<<"\nThe details of the student are ->\n";
+        cout<<"Rollno = "<<rno<<"\t"<<"Age = "<<age<<"\t"<<"Marks = "<<m1<<" & "<<m2<<"\t"<<"Marks in sports = "<<spm;
+        cout<<"\nThe result of the student = "<<total;
+    }
+};
+int main()
+{
+    result r;
+    r.input();
+    r.input1();
+    r.input2();
+    r.results();
+}
